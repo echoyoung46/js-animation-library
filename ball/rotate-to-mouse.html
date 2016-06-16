@@ -13,12 +13,16 @@
     window.onload = function(){
         var canvas = document.getElementById('canvas'),
             context = canvas.getContext('2d'),
-            mouse = utils.captureMouse(canvas),
+            mouse = {x:0, y:0},
             arrow = new Arrow();
-            
+
+        document.onmousemove = function(e){
+            mouse.x = e.pageX;
+            mouse.y = e.pageY;
+        }
+        
         arrow.x = canvas.width / 2;
         arrow.y = canvas.height / 2;
-        console.log(arrow);
         (function drawFrame() {
             window.requestAnimationFrame(drawFrame, canvas);
             context.clearRect(0, 0, canvas.width, canvas.height);
