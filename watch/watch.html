@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #canvas{
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1600" height="938"></canvas>
+
+<script src="watch.js"></script>
+<script>
+    function init() {
+        var watch = new Watch('canvas').init();
+    }
+
+    window.onload = init;
+</script>
+</body>
+</html>
