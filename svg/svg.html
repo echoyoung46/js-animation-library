@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="svg.css">
 </head>
 <body>
-    <svg id="svgForStroke" xmlns="http://www.w3.org/2000/svg" viewBox="-1024 -1024 2048 2048">
+    <svg id="jacket-watch" xmlns="http://www.w3.org/2000/svg" viewBox="-1024 -1024 2048 2048">
         <defs>
             <!--颜色-->
             <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
@@ -91,13 +91,23 @@
             <path id="handh" fill="#ddd" stroke="none" d="M -10,-120  l 10,-10 10,10 -10,130 z"></path>
             <path id="handm" fill="#ddd" stroke="none" d="M -10,-120  l 10,-10 10,10 -10,180 z"></path>
                 
-            <g id="bigHandMH">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handh" transform="translate(-60, 100) rotate(30)"></use>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handm" transform="translate(0, 120)"></use>
+            <g id="bigHandH">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handh" transform="translate(0, 120)"></use>
             </g>
-            <g id="littleHandMH">
+            <g id="bigHandM">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handm" transform="translate(-60, 100) rotate(30)"></use>
+            </g>
+
+            <g id="littleHandH">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handh" transform="translate(-110, 0) rotate(60) scale(0.3)"></use>
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handm" transform="translate(-110, -35) rotate(120) scale(0.3)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handh" transform="translate(-100, 70) rotate(-60) scale(0.3)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handh" transform="translate(65, 0) rotate(140) scale(0.3)"></use>
+            </g>
+
+            <g id="littleHandM">
+                <use id="littleMin1" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handm" transform="translate(-110, -35) rotate(120) scale(0.3)"></use>
+                <use id="littleMin2" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handm" transform="translate(-100, 50) rotate(-90) scale(0.3)"></use>
+                <use id="littleMin3" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handm" transform="translate(90, -10) rotate(180) scale(0.3)"></use>
             </g>
         </defs>
         
@@ -121,13 +131,24 @@
         <!--小圆环-->
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#funcCircle" id="funcCircle"></use>
         
-        <!--大时针-->
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bigHandMH" id="bigHandMH"></use>
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#littleHandMH" id="littleHandMH"></use>
+        <!--大时针分针-->
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bigHandH" id="bigHandH"></use>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bigHandM" id="bigHandM"></use>
+
+        <!--小时针分针-->
+        <g id="littleHandMH">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#littleHandH" id="littleHandH"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#littleHandM" id="littleHandM"></use>
+        </g>
+
+        <image id="logo" xlink:href="logo.jpg" x="-95" y="-200" height="135px" width="185px" />
+
     </svg>
 </body>
 </html>
   <!--秒针出现 1s
   刻度出现 0.5s
   圆环出现 1s
-  小圆环出现 0.3s -->
+  大针出现 0.1s
+  小圆环和小针出现 0.1s
+  小针旋转 0.3s -->

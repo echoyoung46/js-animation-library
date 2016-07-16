@@ -109,12 +109,6 @@ path#circle-path{
     opacity: 0;
 }
 
-@keyframes show{
- 
-    100%{
-        opacity: 1;
-    }
-}
 @keyframes load{
     0%{
         opacity: 1;
@@ -126,14 +120,68 @@ path#circle-path{
     }
 }
 
-use#funcCircle{
-    /*opacity: 0;*/
-    animation: show .3s linear 2.5s;
+use#bigHandH,use#bigHandM{
+    opacity: 0;
+    animation: show .1s linear 2.5s;
     animation-fill-mode: forwards;
 }
 
-use#handMH{
+use#funcCircle,g#littleHandMH{
     opacity: 0;
-    animation: show .3s linear 2.8s;
+    animation: show .1s linear 2.6s;
     animation-fill-mode: forwards;
+}
+
+use#littleHandM{
+    animation: rotateMin .3s linear 2.7s;
+}
+
+use#littleMin1{
+    transform-origin: -110px -35px;
+}
+use#littleMin2{
+    transform-origin: -100px 50px;
+}
+use#littleMin3{
+    transform-origin: 90px -10px;
+}
+
+@keyframes rotateMin{
+    100%{
+        /*transform: rotate(90deg);*/
+    }
+}
+
+image#logo{
+    opacity: 0;
+    animation: logoShow .3s linear 2.7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes logoShow{
+    0%{
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#jacket-watch{
+    animation: hide .3s linear 3.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show{
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes hide{
+    100%{
+        opacity: 0;
+    }
 }
