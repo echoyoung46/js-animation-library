@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,400">
+    <link rel="stylesheet" href="svg.css">
+</head>
+<body>
+    <svg id="svgForStroke" xmlns="http://www.w3.org/2000/svg" viewBox="-1024 -1024 2048 2048">
+        <defs>
+            <!--颜色-->
+            <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
+                <stop stop-color="#618099"/>
+                <stop offset="100%" stop-color="#8e6677"/>
+            </linearGradient>
+            <linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
+                <stop stop-color="#8e6677"/>
+                <stop offset="100%" stop-color="#9b5e67"/>
+            </linearGradient>
+            <linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
+                <stop stop-color="#9b5e67"/>
+                <stop offset="100%" stop-color="#9c787a"/>
+            </linearGradient>
+            <linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
+                <stop stop-color="#9c787a"/>
+                <stop offset="100%" stop-color="#817a94"/>
+            </linearGradient>
+            <linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
+                <stop stop-color="#817a94"/>
+                <stop offset="100%" stop-color="#498a98"/>
+            </linearGradient>
+            <linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
+                <stop stop-color="#498a98"/>
+                <stop offset="100%" stop-color="#618099"/>
+            </linearGradient>
+            
+            <!--刻度-->
+            <rect id="secondMark" x="0" y="-250" width="2" height="5" />
+            <rect id="hourMark1" x="0" y="-250" width="2" height="15" />
+            <rect id="hourMark2" x="0" y="-250" width="2" height="20" />
+            
+            <g id="secondFace1">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondMark" transform="rotate(06)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondMark" transform="rotate(12)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondMark" transform="rotate(18)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondMark" transform="rotate(24)"></use>
+            </g>
+            <g id="secondFace2">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondFace1"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondFace1" transform="rotate(30)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondFace1" transform="rotate(60)"></use>
+            </g>
+            <g id="secondFace">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondFace2"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondFace2" transform="rotate(90)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondFace2" transform="rotate(180)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondFace2" transform="rotate(270)"></use>
+            </g>
+            <g id="hourFace1">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hourMark2"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hourMark1" transform-origin="1000,500" transform="rotate(30)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hourMark1" transform="rotate(60)"></use>
+            </g>
+            <g id="hourFace">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hourFace1"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hourFace1" transform="rotate(90)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hourFace1" transform="rotate(180)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hourFace1" transform="rotate(270)"></use>
+            </g>
+            
+            <!--表圈-->
+            <g id="watchCircle" fill="none" stroke-width="2">
+                <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+            </g>
+            
+            <!--功能圈-->
+            <circle id="littleCircle" cx="0" cy="0" r="30" stroke-width="1" stroke="#ddd" fill="#000"/>
+            <g id="funcCircle">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#littleCircle" transform="translate(-80,-20)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#littleCircle" transform="translate(-130,50)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#littleCircle" transform="translate(90,25)"></use>
+            </g>
+            
+            <!--时针分针-->
+            <path id="handh" fill="#ddd" stroke="none" d="M -10,-120  l 10,-10 10,10 -10,130 z"></path>
+            <path id="handm" fill="#ddd" stroke="none" d="M -10,-120  l 10,-10 10,10 -10,180 z"></path>
+                
+            <g id="bigHandMH">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handh" transform="translate(-60, 100) rotate(30)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handm" transform="translate(0, 120)"></use>
+            </g>
+            <g id="littleHandMH">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handh" transform="translate(-110, 0) rotate(60) scale(0.3)"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#handm" transform="translate(-110, -35) rotate(120) scale(0.3)"></use>
+            </g>
+        </defs>
+        
+       <!--秒针-->
+        <g>
+            <line id="second-long" fill="none" stroke="#ddd" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="round" x1="0" y1="0" x2="0" y2="-200"/>
+            <line id="second-short" fill="none" stroke="#ddd" stroke-width="2" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="round" x1="0" y1="0" x2="0" y2="40"/>
+            <circle id="watch-center" cx="0" cy="0" r="5" stroke-width="4" stroke="#ddd" fill="#000"/>
+        </g>
+        
+        <!--刻度-->
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hourFace" id="hourFace" class="mark"></use>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#secondFace" id="secondFace" class="mark"></use>
+        
+        <!--大圆环-->
+        <g id="watch-circle">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#watchCircle"></use>
+            <path id="circle-path" d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="629"  transform="translate(-100,-100)"></path>
+        </g>
+        
+        <!--小圆环-->
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#funcCircle" id="funcCircle"></use>
+        
+        <!--大时针-->
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bigHandMH" id="bigHandMH"></use>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#littleHandMH" id="littleHandMH"></use>
+    </svg>
+</body>
+</html>
+  <!--秒针出现 1s
+  刻度出现 0.5s
+  圆环出现 1s
+  小圆环出现 0.3s -->

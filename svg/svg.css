@@ -1,0 +1,139 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+svg{
+    background: #000;
+    width: 100%;
+    height: 100%;
+}
+
+g{
+    /*transition: rotate 5s ease-in-out 25s;*/
+    /*transform: rotate(45deg);    */
+}
+
+line {
+  /*transform-origin: 1000px 500px;*/
+  animation: second 1s linear;
+  animation-fill-mode: forwards;
+}
+
+line#second-long{
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+}
+line#second-short{
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+}
+
+@keyframes second {
+    0%{
+        transform: rotate(0)
+    }
+    60%{
+        stroke-dashoffset: 0;
+        transform: rotate(0)
+    }
+    100%{
+        stroke-dashoffset: 0;
+        transform: rotate(360deg)
+    }
+}
+
+circle#watch-center{
+    /*transform-origin: 1000px 500px;*/
+    animation: center .5s linear;
+}
+
+@keyframes center{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: none;
+    }
+}
+.mark{
+    fill: #ddd; 
+    stroke:none;
+}
+
+use#hourFace{
+    animation: hourFace .5s linear 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes hourFace{
+    0%{
+        transform: scale(2);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+use#secondFace{
+    animation: secondFace .3s linear 1.3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes secondFace{
+    0%{
+        transform: scale(1.5);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#watch-circle{
+    opacity: 0;
+    animation: show 1s linear 1.5s;
+    animation-fill-mode: forwards;
+    transform: scale(3);
+}
+path#circle-path{
+    fill: none;
+    stroke-width: 15;
+    stroke-dasharray: 629;
+    stroke: #000;
+    animation: load 1s linear 1.5s;
+    stroke-dashoffset:0;
+    opacity: 0;
+}
+
+@keyframes show{
+ 
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes load{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        
+        stroke-dashoffset:629;
+    }
+}
+
+use#funcCircle{
+    /*opacity: 0;*/
+    animation: show .3s linear 2.5s;
+    animation-fill-mode: forwards;
+}
+
+use#handMH{
+    opacity: 0;
+    animation: show .3s linear 2.8s;
+    animation-fill-mode: forwards;
+}
